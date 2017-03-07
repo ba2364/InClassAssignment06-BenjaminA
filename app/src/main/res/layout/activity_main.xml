@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.benjaminantell.inclassassignment06_benjamina.MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:hint="@string/city"
+            android:id="@+id/cityName" />
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:hint="@string/nickname"
+            android:id="@+id/nickname" />
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:inputType="number"
+            android:hint="@string/championships"
+            android:id="@+id/titles" />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/playing"
+            android:textSize="20sp"
+            android:id="@+id/exist" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textSize="16sp"
+            android:padding="16dp"
+            android:layout_gravity="center"
+            android:onClick="openSubmitList" />
+    </LinearLayout>
+</ScrollView>

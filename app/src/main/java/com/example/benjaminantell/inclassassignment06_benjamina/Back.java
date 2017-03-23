@@ -8,7 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Back extends AppCompatActivity {
     TextView cityName;
     EditText nickName;
     EditText titles;
@@ -17,22 +17,23 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_back);
         cityName = (EditText) findViewById(R.id.cityName);
         nickName = (EditText) findViewById(R.id.nickname);
         titles = (EditText) findViewById(R.id.titles);
         completedBox = (CheckBox) findViewById(R.id.exist);
     }
 
-    public void openSubmitList(View view) {
+    public void addTeam(View view) {
         String name = cityName.getText().toString();
         String champs = titles.getText().toString();
         int champions = Integer.parseInt(champs);
         String nickname = nickName.getText().toString();
         boolean complete = completedBox.isChecked();
         Team team = new Team(name, nickname, champions, complete);
-        Intent i = new Intent(this, MainActivity2.class);
+        Intent i = new Intent(this, Front.class);
         i.putExtra(Keys.TEAM, team);
-        startActivity(i);
+        setResult(RESULT_OK, i);
+        finish();
     }
 }

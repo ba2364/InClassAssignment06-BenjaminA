@@ -46,4 +46,13 @@ public class Team implements Serializable {
     public void setPlaying(boolean playing) {
         this.playing = playing;
     }
+
+    @Override
+    public String toString() {
+        if (isPlaying()) {
+            return "The " + city + " " + nickname + " have " + champs + " championships and still play. ";
+        } else {
+            return "The " + city + " " + nickname + " have " + champs + " championships and no longer play. ";
+        }
+    }
 }
